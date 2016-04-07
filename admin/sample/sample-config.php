@@ -275,9 +275,60 @@
 
 
      */
-
-    // -> START Basic Fields
+	 // -> START General
     Redux::setSection( $opt_name, array(
+        'title'            => __( 'General Settings', 'redux-framework-demo' ),
+        'id'               => 'general',
+        'desc'             => __( 'These are really generaly settings!', 'redux-framework-demo' ),
+        'customizer_width' => '400px',
+        'icon'             => 'el el-home',
+		'desc'             => __( 'Welcome to the options panel! You can switch between option groups by using the left-hand tabs. ', 'redux-framework-demo' ),
+		'fields'		   => array(
+            array(
+                'id'       => 'opt-general',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Logo Upload', 'redux-framework-demo' ),
+                'compiler' => 'true',
+                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+                'desc'     => __( 'Basic media uploader with disabled URL input field.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Upload any media using the WordPress native uploader', 'redux-framework-demo' ),
+                'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
+                //'hint'      => array(
+                //    'title'     => 'Hint Title',
+                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
+                //)
+            ),
+			array(
+                'id'             => 'opt-general',
+                'type'           => 'spacing',
+                // An array of CSS selectors to apply this font style to
+                'mode'           => 'margin',
+                // absolute, padding, margin, defaults to padding
+                'all'            => false,
+                // Have one field that applies to all
+                //'top'           => false,     // Disable the top
+                //'right'         => false,     // Disable the right
+                //'bottom'        => false,     // Disable the bottom
+                //'left'          => false,     // Disable the left
+                'units'          => array( 'em', 'px', '%' ),      // You can specify a unit value. Possible: px, em, %
+                'units_extended' => 'true',    // Allow users to select any type of unit
+                //'display_units' => 'false',   // Set to false to hide the units if the units are specified
+                'title'          => __( 'Padding/Margin Option', 'redux-framework-demo' ),
+                'subtitle'       => __( 'Allow your users to choose the spacing or margin they want.', 'redux-framework-demo' ),
+                'desc'           => __( 'You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo' ),
+                'default'        => array(
+                    'margin-top'    => '1px',
+                    'margin-right'  => '2px',
+                    'margin-bottom' => '3px',
+                    'margin-left'   => '4px'
+                )
+            ),
+		)
+    ) );
+	
+    // -> START Basic Fields
+	Redux::setSection( $opt_name, array(
         'title'            => __( 'Basic Fields', 'redux-framework-demo' ),
         'id'               => 'basic',
         'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
