@@ -1,10 +1,16 @@
 <?php
 
 
-require_once (dirname(__FILE__) . '/admin/sample/sample-config.php');
-if ( !isset( $ad_options ) && file_exists( dirname( __FILE__ ) . '/admin/options.php' ) ) {
-  require_once( dirname( __FILE__ ) . '/admin/options.php' );
+   // load the theme's framework
+if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname(__FILE__) . '/admin/ReduxCore/framework.php' ) ) {
+require_once( dirname(__FILE__) . '/admin/ReduxCore/framework.php' );
 }
+
+// load the theme's options 
+if ( !isset( $redux_owd ) && file_exists( dirname(__FILE__) . '/admin/sample/sample-config.php' ) ) {
+require_once( dirname(__FILE__) . '/admin/sample/sample-config.php' );
+}
+
 /**
  * Register our Menu areas.
  *
