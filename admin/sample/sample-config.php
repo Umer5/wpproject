@@ -273,7 +273,6 @@
 
         As of Redux 3.5+, there is an extensive API. This API can be used in a mix/match mode allowing for
 
-
      */
 	 // -> START General
     Redux::setSection( $opt_name, array(
@@ -285,7 +284,7 @@
 		'desc'             => __( 'Welcome to the options panel! You can switch between option groups by using the left-hand tabs. ', 'redux-framework-demo' ),
 		'fields'		   => array(
             array(
-                'id'       => 'opt-general',
+                'id'       => 'use-logo',
                 'type'     => 'media',
                 'url'      => true,
                 'title'    => __( 'Logo Upload', 'redux-framework-demo' ),
@@ -300,29 +299,45 @@
                 //)
             ),
 			array(
-                'id'             => 'opt-general',
-                'type'           => 'spacing',
-                // An array of CSS selectors to apply this font style to
-                'mode'           => 'margin',
-                // absolute, padding, margin, defaults to padding
-                'all'            => false,
-                // Have one field that applies to all
-                //'top'           => false,     // Disable the top
-                //'right'         => false,     // Disable the right
-                //'bottom'        => false,     // Disable the bottom
-                //'left'          => false,     // Disable the left
-                'units'          => array( 'em', 'px', '%' ),      // You can specify a unit value. Possible: px, em, %
-                'units_extended' => 'true',    // Allow users to select any type of unit
-                //'display_units' => 'false',   // Set to false to hide the units if the units are specified
-                'title'          => __( 'Padding/Margin Option', 'redux-framework-demo' ),
-                'subtitle'       => __( 'Allow your users to choose the spacing or margin they want.', 'redux-framework-demo' ),
-                'desc'           => __( 'You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo' ),
+                'id'             => 'opt-height',
+                'type'           => 'dimensions',
+                'units'          => array( 'em', 'px', '%' ),    // You can specify a unit value. Possible: px, em, %
+                'units_extended' => 'true',  // Allow users to select any type of unit
+                'title'          => __( 'Logo (Height)', 'redux-framework-demo' ),
+                'subtitle'       => __( 'Allow your users to choose height and/or unit.', 'redux-framework-demo' ),
+                'desc'           => __( 'You can enable or disable any piece of this field. Height or Units.', 'redux-framework-demo' ),
+                'width'         => false,
                 'default'        => array(
-                    'margin-top'    => '1px',
-                    'margin-right'  => '2px',
-                    'margin-bottom' => '3px',
-                    'margin-left'   => '4px'
+                    'width'  => 200,
+                    'height' => 100,
                 )
+            ),
+			array(
+                'id'       => 'media-fav',
+                'type'     => 'media',
+                'title'    => __( 'Favicon Upload', 'redux-framework-demo' ),
+                'subtitle'     => __( 'Upload a 16px x 16px .png or .gif image that will be your favicon.', 'redux-framework-demo' ),
+            ),
+		)
+    ) );
+	
+	 // -> START FOOTER
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Footer', 'redux-framework-demo' ),
+        'id'               => 'footer',
+        'desc'             => __( 'These are really generaly settings!', 'redux-framework-demo' ),
+        'customizer_width' => '400px',
+        'icon'             => 'el el-edit',
+		'desc'             => __( 'Welcome to the options panel! You can switch between option groups by using the left-hand tabs. ', 'redux-framework-demo' ),
+		'fields'		   => array(
+            array(
+                'id'       => 'opt-footer',
+                'type'     => 'textarea',
+                'title'    => __( 'Textarea Option - HTML Validated', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please enter the copyright section text. e.g. All Rights Reserved, Salient Inc.', 'redux-framework-demo' ),
+                'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+                'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
+                'default'  => 'HTML is allowed in here.'
             ),
 		)
     ) );

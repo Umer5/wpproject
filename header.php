@@ -8,7 +8,15 @@
  * @subpackage My_Theme
  * @since My Theme 2.0.2
  */
-?><!DOCTYPE html>
+ global $redux_demo;
+?>
+		<?php 
+			//echo '<pre>';
+			//print_r($redux_demo);
+		
+		 ?>
+
+<!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!--> <html <?php language_attributes(); ?> > <!--<![endif]-->
@@ -22,7 +30,9 @@
     <meta content="" name="author" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />  
 
-	<link rel="shortcut icon" href="favicon.ico" />
+	<?php if(!empty($redux_demo['media-fav']['url'])) { ?>
+		<link rel="shortcut icon" href="<?php echo $redux_demo['media-fav']['url']; ?>" />
+	<?php } ?>
    	
 	<?php wp_head(); ?>
 </head>
@@ -31,6 +41,7 @@
 <!-- BEGIN BODY -->
 <body>
     <!-- BEGIN HEADER -->
+	
     <div class="header navbar navbar-default navbar-static-top">
 		<!-- BEGIN TOP BAR -->
         <div class="front-topbar">
@@ -64,8 +75,14 @@
 				</button>
 				<!-- END RESPONSIVE MENU TOGGLER -->
 				<!-- BEGIN LOGO (you can use logo image instead of text)-->
-				<a class="navbar-brand logo-v1" href="index.html">
-					<img src="assets/img/logo_blue.png" id="logoimg" alt="">
+				<a class="navbar-brand logo-v1" href="<?php echo home_url(); ?>">
+					<?php
+						if(!empty($redux_demo['use-logo'])) {
+							$logo_url = $redux_demo['use-logo']['url'];
+							$height = (!empty($redux_demo['opt-height'])) ? $redux_demo['opt-height']['height'] : null;
+							echo '<img src="'.$logo_url.'" id="logoimg" alt="" style="height:'.$height.'">';
+						} else { echo get_bloginfo('name'); }
+					 ?>
 				</a>
 				<!-- END LOGO -->
 			</div>

@@ -11,6 +11,8 @@ if ( !isset( $redux_owd ) && file_exists( dirname(__FILE__) . '/admin/sample/sam
 require_once( dirname(__FILE__) . '/admin/sample/sample-config.php' );
 }
 
+
+
 /**
  * Register our Menu areas.
  *
