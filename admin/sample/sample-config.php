@@ -331,26 +331,33 @@
 		'desc'             => __( 'All footer related options are listed here.', 'redux-framework-demo' ),
 		'fields'		   => array(
             array(
-                'id'       => 'opt-widget-layout',
+                'id'       => 'footer-widget-on',
+                'type'     => 'switch',
+                'title'    => __( 'Main Footer Area', 'redux-framework-demo' ),
+                'subtitle' => __( 'Do you want use the main footer that contains all the widgets areas?', 'redux-framework-demo' ),
+                'default'  => true,
+            ),
+		    array(
+                'id'       => 'widget-columns',
                 'type'     => 'image_select',
                 'title'    => __( 'Footer Columns', 'redux-framework-demo' ),
                 'subtitle' => __( 'Please select the number of columns you would like for your footer.', 'redux-framework-demo' ),
                 //Must provide key => value(array:title|img) pairs for radio options
                 'options'  => array(
-                    '1' => array(
+                    '2' => array(
                         'alt' => '2 Column',
                         'img' => ReduxFramework::$_url . 'assets/img/2col.png'
                     ),
-                    '2' => array(
+                    '3' => array(
                         'alt' => '3 Column Left',
                         'img' => ReduxFramework::$_url . 'assets/img/3col.png'
                     ),
-                    '3' => array(
+                    '4' => array(
                         'alt' => '4 Column Right',
                         'img' => ReduxFramework::$_url . 'assets/img/4col.png'
                     ),
                 ),
-                'default'  => '3'
+                'default'  => '4'
             ),
 			array(
                 'id'       => 'opt-copyright',

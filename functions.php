@@ -39,6 +39,17 @@ function theme_slug_widgets_init() {
     ) );
 }
 
+register_sidebar(array('name' => 'Footer Area 1', 'id' => 'footer-area-1', 'before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget'  => '</div>', 'before_title'  => '<h2>', 'after_title'   => '</h2>'));
+	register_sidebar(array('name' => 'Footer Area 2', 'id' => 'footer-area-2','before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget'  => '</div>', 'before_title'  => '<h2>', 'after_title'   => '</h2>'));
+	
+	global $redux_demo; 
+	$footerColumns = (!empty($redux_demo['widget-columns'])) ? $redux_demo['widget-columns'] : '4';
+	if($footerColumns == '3' || $footerColumns == '4'){
+		register_sidebar(array('name' => 'Footer Area 3', 'id' => 'footer-area-3', 'before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget'  => '</div>', 'before_title'  => '<h2>', 'after_title'   => '</h2>'));
+	}
+	if($footerColumns == '4'){
+		register_sidebar(array('name' => 'Footer Area 4', 'id' => 'footer-area-4', 'before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget'  => '</div>', 'before_title'  => '<h2>', 'after_title'   => '</h2>'));
+	}
 // Load the theme stylesheets
 function theme_styles()  
 { 
