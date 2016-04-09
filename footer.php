@@ -8,6 +8,7 @@
  * @subpackage My_Theme
  * @since My Theme 2.0.2
  */
+global $redux_demo;
 ?>
 <!-- BEGIN FOOTER -->
     <div class="footer">
@@ -112,8 +113,13 @@
             <div class="row">
                 <div class="col-md-8 col-sm-8">
                     <p>
-                        <span class="margin-right-10">2013 © Metronic. ALL Rights Reserved.</span> 
-                        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                        <span class="margin-right-10">
+							<?php if(!empty($redux_demo['opt-copyright']) && isset($redux_demo['opt-copyright'])) { ?>
+								<?php echo $redux_demo['opt-copyright']; ?>
+							<?php } else { ?>
+								&copy; <?php echo date('Y') . ' ' . get_bloginfo('name'); ?>. <?php if(!empty($redux_demo['opt-copyright'])) echo $redux_demo['opt-copyright']; ?> 
+					<?php } ?>
+						</span> 
                     </p>
                 </div>
                 <div class="col-md-4 col-sm-4">

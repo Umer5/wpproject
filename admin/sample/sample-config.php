@@ -328,12 +328,34 @@
         'desc'             => __( 'These are really generaly settings!', 'redux-framework-demo' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-edit',
-		'desc'             => __( 'Welcome to the options panel! You can switch between option groups by using the left-hand tabs. ', 'redux-framework-demo' ),
+		'desc'             => __( 'All footer related options are listed here.', 'redux-framework-demo' ),
 		'fields'		   => array(
             array(
-                'id'       => 'opt-footer',
+                'id'       => 'opt-widget-layout',
+                'type'     => 'image_select',
+                'title'    => __( 'Footer Columns', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please select the number of columns you would like for your footer.', 'redux-framework-demo' ),
+                //Must provide key => value(array:title|img) pairs for radio options
+                'options'  => array(
+                    '1' => array(
+                        'alt' => '2 Column',
+                        'img' => ReduxFramework::$_url . 'assets/img/2col.png'
+                    ),
+                    '2' => array(
+                        'alt' => '3 Column Left',
+                        'img' => ReduxFramework::$_url . 'assets/img/3col.png'
+                    ),
+                    '3' => array(
+                        'alt' => '4 Column Right',
+                        'img' => ReduxFramework::$_url . 'assets/img/4col.png'
+                    ),
+                ),
+                'default'  => '3'
+            ),
+			array(
+                'id'       => 'opt-copyright',
                 'type'     => 'textarea',
-                'title'    => __( 'Textarea Option - HTML Validated', 'redux-framework-demo' ),
+                'title'    => __( 'Footer Copyright Section Text', 'redux-framework-demo' ),
                 'subtitle' => __( 'Please enter the copyright section text. e.g. All Rights Reserved, Salient Inc.', 'redux-framework-demo' ),
                 'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
                 'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
