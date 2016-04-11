@@ -11,8 +11,8 @@
  global $redux_demo;
 ?>
 		<?php 
-			//echo '<pre>';
-			//print_r($redux_demo);
+			echo '<pre>';
+			print_r($redux_demo);
 
 		
 		 ?>

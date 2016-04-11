@@ -371,6 +371,87 @@
 		)
     ) );
 	
+	 // -> START Social Media
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Social Media', 'redux-framework-demo' ),
+        'id'               => 'social',
+        'customizer_width' => '400px',
+        'icon'             => 'el el-user',
+		'desc'             => __( 'Enter in your social media locations here and then activate which ones you would like to display in your footer options & header options tabs.<br><h3><strong>Remember to include the "http://" in all URLs!</strong></h3>', 'redux-framework-demo' ),
+		'fields'		   => array(
+            array(
+                'id'       => 'social-on',
+                'type'     => 'switch',
+                'title'    => __( 'Sharing Button', 'redux-framework-demo' ),
+                'subtitle' => __( 'This will allow your sharing buttons', 'redux-framework-demo' ),
+                'default'  => true,
+            ),
+			array(
+                'id'       => 'facebook-url',
+                'type'     => 'text',
+                'title'    => __( 'Facebook URL', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please enter in your Facebook URL.', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+			array(
+                'id'       => 'google-url',
+                'type'     => 'text',
+                'title'    => __( 'Google+ URL', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please enter in your Google+ URL.', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+			array(
+                'id'       => 'dribbble-url',
+                'type'     => 'text',
+                'title'    => __( 'Dribbble URL', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please enter in your Dribbble URL.', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+			array(
+                'id'       => 'linkedin-url',
+                'type'     => 'text',
+                'title'    => __( 'LinkedIn URL', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please enter in your LinkedIn URL.', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+			array(
+                'id'       => 'twitter-url',
+                'type'     => 'text',
+                'title'    => __( 'Pinterest URL', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please enter in your Twitter URL.', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+			array(
+                'id'       => 'skype-url',
+                'type'     => 'text',
+                'title'    => __( 'Skype URL', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please enter in your Skype URL.', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+			array(
+                'id'       => 'github-url',
+                'type'     => 'text',
+                'title'    => __( 'GitHub URL', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please enter in your GitHub URL.', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+			array(
+                'id'       => 'youtube-url',
+                'type'     => 'text',
+                'title'    => __( 'Youtube URL', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please enter in your Youtube URL.', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+			array(
+                'id'       => 'dropbox-url',
+                'type'     => 'text',
+                'title'    => __( 'Dropbox URL', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please enter in your Dropbox URL.', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+		)
+    ) );
+	
     // -> START Basic Fields
 	Redux::setSection( $opt_name, array(
         'title'            => __( 'Basic Fields', 'redux-framework-demo' ),
