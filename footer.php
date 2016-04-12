@@ -93,15 +93,19 @@ global $redux_demo;
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <ul class="social-footer">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                        <li><a href="#"><i class="fa fa-github"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dropbox"></i></a></li>
+						<?php  if(!empty($redux_demo['social-on']) && $redux_demo['social-on'] == 1) { ?>
+						
+							<?php  if(!empty($redux_demo['facebook-url'])) { ?><li><a target="_blank" href="<?php echo $redux_demo['facebook-url']; ?>"><i class="fa fa-facebook"></i> </a></li> <?php } ?>
+							<?php  if(!empty($redux_demo['google-url'])) { ?><li><a target="_blank" href="<?php echo $options['google-url']; ?>"><i class="fa fa-google-plus"></i> </a></li> <?php } ?>
+							<?php  if(!empty($redux_demo['dribbble-url'])) { ?><li><a target="_blank" href="<?php echo $redux_demo['dribbble-url']; ?>"><i class="fa fa-dribbble"></i> </a></li> <?php } ?>
+							<?php  if(!empty($redux_demo['linkedin-url'])) { ?><li><a target="_blank" href="<?php echo $options['linkedin-url']; ?>"><i class="fa fa-linkedin"></i> </a></li> <?php } ?>
+							<?php  if(!empty($redux_demo['twitter-url'])) { ?><li><a target="_blank" href="<?php echo $redux_demo['twitter-url']; ?>"><i class="fa fa-twitter"></i> </a></li> <?php } ?>
+							<?php  if(!empty($redux_demo['skype-url'])) { ?><li><a target="_blank" href="<?php echo $options['skype-url']; ?>"><i class="fa fa-skype"></i> </a></li> <?php } ?>
+							<?php  if(!empty($redux_demo['github-url'])) { ?><li><a target="_blank" href="<?php echo $redux_demo['github-url']; ?>"><i class="fa fa-github"></i> </a></li> <?php } ?>
+							<?php  if(!empty($redux_demo['youtube-url'])) { ?><li><a target="_blank" href="<?php echo $options['youtube-url']; ?>"><i class="fa fa-youtube"></i> </a></li> <?php } ?>
+							<?php  if(!empty($redux_demo['dropbox-url'])) { ?><li><a target="_blank" href="<?php echo $redux_demo['dropbox-url']; ?>"><i class="fa fa-dropbox"></i> </a></li> <?php } ?>
+							
+						<?php } ?>
                     </ul>                
                 </div>
             </div>

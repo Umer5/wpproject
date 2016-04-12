@@ -321,6 +321,41 @@
 		)
     ) );
 	
+	 // -> START Header
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Header', 'redux-framework-demo' ),
+        'id'               => 'header',
+        'desc'             => __( 'These are really generaly settings!', 'redux-framework-demo' ),
+        'customizer_width' => '400px',
+        'icon'             => 'el el-edit',
+		'desc'             => __( 'All header related options are listed here.', 'redux-framework-demo' ),
+		'fields'		   => array(
+			array(
+                'id'       => 'header-fix',
+                'type'     => 'checkbox',
+                'title'    => __( 'Sticky Header', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please select your header layout here.', 'redux-framework-demo' ),
+                'desc'     => __( 'If checked the header will stick to the top of your site if user scrolls down.', 'redux-framework-demo' ),
+                'default'  => '1'// 1 = on | 0 = off
+            ),
+			array(
+                'id'       => 'phone',
+                'type'     => 'text',
+                'title'    => __( 'Phone', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please enter in your Phone Number. Top bar', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+			array(
+                'id'       => 'email',
+                'type'     => 'text',
+                'title'    => __( 'Email', 'redux-framework-demo' ),
+                'subtitle' => __( 'Please enter in your Email Address.Top bar', 'redux-framework-demo' ),
+                'default'  => '',
+            ),	
+			
+		)
+    ) );
+	
 	 // -> START FOOTER
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Footer', 'redux-framework-demo' ),

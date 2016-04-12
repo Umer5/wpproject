@@ -14,12 +14,21 @@ require_once( dirname(__FILE__) . '/admin/sample/sample-config.php' );
 
 
 /**
- * Register our Menu areas.
+ * Register our Main Menu areas.
  *
  */
 add_action( 'after_setup_theme', 'register_my_menu' );
 function register_my_menu() {
-  register_nav_menu( 'primary', __( 'Primary Menu', 'theme-slug' ) );
+  register_nav_menu( 'primary_menu', __( 'Primary Menu', 'theme-slug' ) );
+}
+/**
+ * Register our Top Menu areas.
+ *
+ */
+
+add_action( 'after_setup_theme', 'register_top_menu' );
+function register_top_menu() {
+  register_nav_menu( 'top_menu', __( 'Top Menu', 'theme-slug' ) );
 }
 
 /**
