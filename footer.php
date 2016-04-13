@@ -118,11 +118,22 @@ global $redux_demo;
     <!--[if lt IE 9]>
     <script src="<?php echo get_template_directory_uri()?>/assets/plugins/respond.min.js"></script>  
     <![endif]-->  
-    
+    <script src="<?php echo get_template_directory_uri()?>/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="<?php echo get_template_directory_uri()?>/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+    <script src="<?php echo get_template_directory_uri()?>/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>      
+    <script type="text/javascript" src="<?php echo get_template_directory_uri()?>/assets/plugins/back-to-top.js"></script>    
     <!-- END CORE PLUGINS -->
 
     <!-- BEGIN PAGE LEVEL JAVASCRIPTS(REQUIRED ONLY FOR CURRENT PAGE) -->
-    <?php wp_footer(); ?>    
+    <script type="text/javascript" src="<?php echo get_template_directory_uri()?>/assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>  
+    <script type="text/javascript" src="<?php echo get_template_directory_uri()?>/assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri()?>/assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script> 
+    <script type="text/javascript" src="<?php echo get_template_directory_uri()?>/assets/plugins/bxslider/jquery.bxslider.min.js"></script>
+    <script src="<?php echo get_template_directory_uri()?>/assets/scripts/app.js"></script>
+    <script src="<?php echo get_template_directory_uri()?>/assets/scripts/index.js"></script>    
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS(REQUIRED ONLY FOR CURRENT PAGE) -->    
     <script type="text/javascript">
         jQuery(document).ready(function() {
             App.init();    
@@ -131,6 +142,7 @@ global $redux_demo;
         });
     </script>
     <!-- END PAGE LEVEL JAVASCRIPTS -->
+	<?php wp_footer(); ?>
 </body>
 <!-- END BODY -->
 </html>

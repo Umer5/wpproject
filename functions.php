@@ -62,7 +62,11 @@ register_sidebar(array('name' => 'Footer Area 1', 'id' => 'footer-area-1', 'befo
 // Load the theme stylesheets
 function theme_styles()  
 { 
-
+	//register js
+	//wp_register_script( 'custom-script', get_template_directory_uri() . '/assets/plugins/jquery-1.10.2.min.js', TRUE );
+	wp_register_script( 'custom-script', get_template_directory_uri() . '/assets/plugins/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
+	
+	//register js
 	// Example of loading a jQuery slideshow plugin just on the homepage
 	wp_register_style( 'flexslider', get_template_directory_uri() . '/assets/plugins/revolution_slider/css/rs-style.css' );
 
@@ -83,36 +87,12 @@ function theme_styles()
 	if(is_page('home')) {
 		wp_enqueue_style('flexslider');
 	}
+	
+    
 
 }
 add_action('wp_enqueue_scripts', 'theme_styles');
 
-// Load the theme scripts
-function theme_scripts()  
-{ 
-
-	// Example of loading a jQuery slideshow plugin just on the homepage
-	wp_register_script( 'flexslider', get_template_directory_uri() . '/assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js' );
-
-	// Load all of the styles that need to appear on all pages
-	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/plugins/jquery-1.10.2.min.js' );
-	wp_enqueue_script( 'migrate', get_template_directory_uri() . '/assets/plugins/jquery-migrate-1.2.1.min.js' );
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/plugins/bootstrap/js/bootstrap.min.js' );
-	wp_enqueue_script( 'back-to-top', get_template_directory_uri() . '/assets/plugins/back-to-top.js' );
-	wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/assets/plugins/fancybox/source/jquery.fancybox.pack.js' );
-	wp_enqueue_script( 'themepunch', get_template_directory_uri() . '/assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min.js' );
-	wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/' );
-	wp_enqueue_script( 'metronic', get_template_directory_uri() . '/assets/plugins/bxslider/jquery.bxslider.min.js' );
-	wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/scripts/app.js' );
-	wp_enqueue_script( 'index', get_template_directory_uri() . '/assets/scripts/index.js' );
-		
-	// Conditionally load the FlexSlider CSS on the homepage
-	if(is_page('home')) {
-		wp_enqueue_script('flexslider');
-	}
-
-}
-add_action('wp_enqueue_scripts', 'theme_scripts');
 
 ?>
 

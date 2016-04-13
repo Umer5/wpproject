@@ -94,10 +94,30 @@ $top_email = (!empty($redux_demo['email']) && isset($redux_demo['email'])) ? $re
 		
 			<!-- BEGIN TOP NAVIGATION MENU -->
 			<div class="navbar-collapse collapse">
-				<?php if(has_nav_menu('primary_menu')) { ?>
-					   <?php wp_nav_menu( array( 'theme_location' => 'primary_menu', 'menu_class' => 'nav navbar-nav' ) ); ?>
-				<?php }	?>
-				  
+				<ul class="nav navbar-nav">
+				<?php if(has_nav_menu('primary_menu')) {
+					   	 wp_nav_menu( array(
+							 'theme_location' => 'primary_menu',
+							 'container' => '',
+							 'menu_class' => 'nav navbar-nav',
+							 'items_wrap' => '%3$s' ) 
+						  ); 
+				 	   } ?>
+				  <li class="menu-search">
+                        <span class="sep"></span>
+                        <i class="fa fa-search search-btn"></i>
+                        <div class="search-box">
+                            <form action="#">
+                                <div class="input-group input-large">
+                                    <input class="form-control" type="text" placeholder="Search">
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn theme-btn">Go</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div> 
+					</li>
+				</ul>
             </div>
             <!-- BEGIN TOP NAVIGATION MENU -->
 		</div>
