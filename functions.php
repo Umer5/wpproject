@@ -41,10 +41,10 @@ function theme_slug_widgets_init() {
         'name' => __( 'Main Sidebar', 'theme-slug' ),
         'id' => 'sidebar-1',
         'description' => __( 'Widgets in this area will be shown.', 'theme-slug' ),
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</li>',
-	'before_title'  => '<h2 class="widgettitle">',
-	'after_title'   => '</h2>',
+        'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
     ) );
 }
 
@@ -87,12 +87,11 @@ function theme_styles()
 	if(is_page('home')) {
 		wp_enqueue_style('flexslider');
 	}
-	
-    
-
 }
 add_action('wp_enqueue_scripts', 'theme_styles');
 
+// This theme uses post thumbnails
+add_theme_support( 'post-thumbnails' );
 
 ?>
 
