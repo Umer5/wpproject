@@ -32,6 +32,7 @@
 		
 		<?php if(!is_single()){ ?>
 			<?php echo substr(get_the_excerpt(), 0,350); ?>
+			<a class="more" href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__('Permalink to %s', 'minti'), the_title_attribute('echo=0') ); ?>" rel="bookmark">Read more <i class="icon-angle-right"></i></a>
 		<?php } else { ?>
 			<?php the_content(); ?>
 		<?php } ?>
